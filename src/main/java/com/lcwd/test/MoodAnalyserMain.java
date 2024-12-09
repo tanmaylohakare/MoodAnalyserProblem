@@ -6,10 +6,13 @@ public class MoodAnalyserMain {
         System.out.println("WelCome to Mood Analyser Problem ");
 
         MoodAnalyser m1=new MoodAnalyser();
-        String mood = m1.AnalyseMood("Happy");
+//        String mood1 = m1.AnalyseMood("I am in happy mood");
+        String mood2 =m1.AnalyseMood("I am in Sad mood");
 
 
-        System.out.println("I am :"+ mood);
+//        System.out.println("I am :"+ mood1);
+        System.out.println("I am "+ mood2);
+
 
     }
 }

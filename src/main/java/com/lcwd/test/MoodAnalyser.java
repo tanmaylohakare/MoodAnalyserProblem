@@ -19,7 +19,7 @@ public class MoodAnalyser {
             return "HAPPY";
         }
 
-        return "Nutral";
+        return "Happy";
 
     }
 }
