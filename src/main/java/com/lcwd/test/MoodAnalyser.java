@@ -2,7 +2,18 @@ package com.lcwd.test;
 
 public class MoodAnalyser {
 
-    public String AnalyseMood(String message)
+    private String message;
+
+    MoodAnalyser()
+    {
+
+    }
+
+MoodAnalyser(String message)
+{
+    this.message=message;
+}
+public String AnalyseMood()
     {
         if(message==null || message.isEmpty())
         {

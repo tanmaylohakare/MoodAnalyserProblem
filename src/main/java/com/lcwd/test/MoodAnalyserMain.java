@@ -7,7 +7,7 @@ public class MoodAnalyserMain {
 
         MoodAnalyser m1=new MoodAnalyser();
 //        String mood1 = m1.AnalyseMood("I am in happy mood");
-        String mood2 =m1.AnalyseMood("I am in Sad mood");
+        String mood2 =m1.AnalyseMood();
 
 
 //        System.out.println("I am :"+ mood1);
