@@ -7,12 +7,15 @@ public class MoodAnalyserMain {
 
         MoodAnalyzer m1=new MoodAnalyzer();
 //        String mood1 = m1.AnalyseMood("I am in happy mood");
-        String mood2 =m1.AnalyseMood("I am in happy mood");
 
+        try{
+            m1.AnalyseMood1(null);
 
-//        System.out.println("I am :"+ mood1);
-        System.out.println("I am "+ mood2);
+        }
+        catch (InvalidMoodException e)
+        {
+            System.out.println(e.getMessage());
 
-
+        }
     }
 }

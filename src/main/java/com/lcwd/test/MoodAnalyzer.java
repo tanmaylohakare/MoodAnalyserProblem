@@ -4,58 +4,60 @@ public class MoodAnalyzer {
 
     private String message;
 
-    MoodAnalyzer()
-    {
+    // Non Parameterize Constructor
+    MoodAnalyzer() {
 
     }
 
-MoodAnalyzer(String message)
-{
-    this.message=message;
-}
 
-// Method 1
-public String AnalyseMood(String message)
-    {
-        if(message==null || message.isEmpty())
-        {
-            return "Nutral";
+    //Parameterize Constructor
+    MoodAnalyzer(String message) {
+        this.message = message;
+    }
+
+
+//    // Method 1 (Parameterize constructor is used in this method )
+//    public static String AnalyseMood(String message) {
+//
+//
+//
+//            if (message == null || message.isEmpty()) {
+//                return "Nutral";
+//            }
+//
+//            if (message.toLowerCase().contains("sad")) {
+//                return "SAD";
+//            }
+//
+//            if (message.toLowerCase().contains("happy")) {
+//                return "HAPPY";
+//            }
+//
+//            return "HAPPY";
+//        }
+//
+//        }
+
+    // Method 2 (Non Paremeterize Constructor is been used )
+    public String AnalyseMood1(Object o) throws InvalidMoodException {
+
+        if (message == null || message.isEmpty()) {
+        throw new InvalidMoodException("Invalid Mood , please enter valid mood");
         }
 
-        if (message.toLowerCase().contains("sad"))
-        {
+        if (message.toLowerCase().contains("sad")) {
             return "SAD";
         }
 
-        if(message.toLowerCase().contains("happy"))
-        {
+        if (message.toLowerCase().contains("happy")) {
             return "HAPPY";
         }
 
         return "HAPPY";
 
-    }
-
-// Method 2
-    public String AnalyseMood1()
-    {
-        if(message==null || message.isEmpty())
-        {
-            return "Nutral";
-        }
-
-        if (message.toLowerCase().contains("sad"))
-        {
-            return "SAD";
-        }
-
-        if(message.toLowerCase().contains("happy"))
-        {
-            return "HAPPY";
-        }
-
-        return "HAPPY";
 
     }
-
 }
+
+
+
