@@ -39,10 +39,10 @@ public class MoodAnalyzer {
 //        }
 
     // Method 2 (Non Paremeterize Constructor is been used )
-    public String AnalyseMood1(Object o) throws InvalidMoodException {
-
+    public String AnalyseMood1(String inputMessage) {
+    try {
         if (message == null || message.isEmpty()) {
-        throw new InvalidMoodException("Invalid Mood , please enter valid mood");
+            throw new InvalidMoodException("Invalid Mood , please enter valid mood");
         }
 
         if (message.toLowerCase().contains("sad")) {
@@ -54,7 +54,12 @@ public class MoodAnalyzer {
         }
 
         return "HAPPY";
+    }
+    catch (InvalidMoodException e)
+    {
+        return "HAPPY";
 
+    }
 
     }
 }
