@@ -1,68 +1,31 @@
 package com.lcwd.test;
 
+// Custom Exception Class
 public class MoodAnalyzer {
-
     private String message;
 
-    // Non Parameterize Constructor
-    MoodAnalyzer() {
-
+    //Default Constructor
+    public MoodAnalyzer(){
+        message = "Happy";
     }
-
-
-    //Parameterize Constructor
-    MoodAnalyzer(String message) {
+    //parameterized constructor
+    public MoodAnalyzer(String message){
         this.message = message;
     }
 
-
-//    // Method 1 (Parameterize constructor is used in this method )
-//    public static String AnalyseMood(String message) {
-//
-//
-//
-//            if (message == null || message.isEmpty()) {
-//                return "Nutral";
-//            }
-//
-//            if (message.toLowerCase().contains("sad")) {
-//                return "SAD";
-//            }
-//
-//            if (message.toLowerCase().contains("happy")) {
-//                return "HAPPY";
-//            }
-//
-//            return "HAPPY";
-//        }
-//
-//        }
-
-    // Method 2 (Non Paremeterize Constructor is been used )
-    public String AnalyseMood1(String inputMessage) {
-    try {
-        if (message == null || message.isEmpty()) {
-            throw new InvalidMoodException("Invalid Mood , please enter valid mood");
+    public String analyseMood(String message) throws MoodAnalysisException {
+        try {
+            if (message == null)
+                throw new MoodAnalysisException(MoodAnalysisError.NULL_MOOD, "Mood cannot be null");
+            if (message.isEmpty())
+                throw new MoodAnalysisException(MoodAnalysisError.EMPTY_MOOD, "Mood cannot be Empty");
+            if (message.toLowerCase().contains("sad"))
+                return "SAD";
+            if (message.toLowerCase().contains("happy"))
+                return "Happy";
+        } catch (NullPointerException e) {
+            throw new MoodAnalysisException(MoodAnalysisError.NULL_MOOD, "Mood cannot be null");
         }
 
-        if (message.toLowerCase().contains("sad")) {
-            return "SAD";
-        }
-
-        if (message.toLowerCase().contains("happy")) {
-            return "HAPPY";
-        }
-
-        return "HAPPY";
+        return "Happy";
     }
-    catch (InvalidMoodException e)
-    {
-        return "HAPPY";
-
-    }
-
-    }
-}
-
-
-
